@@ -1,4 +1,4 @@
-let svgSize = 50;
+let svgSize = 35;
 
 let titleIcon =
   "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width=" +
@@ -102,27 +102,15 @@ const sidebarIcons = {
 };
 
 let text = "";
-for (let [key, value] of Object.entries(sidebarIcons)) {
-  text += "<li>" + value + key + "</li>";
+for (let key of Object.keys(sidebarIcons)) {
+  text += "<li>" + key + "</li>";
 }
 
-document.getElementById("sidebarPartOneList").innerHTML = text;
+let Icons = "";
+for (let Icon of Object.values(sidebarIcons)) {
+  Icons += "<li>" + Icon + "</li>";
+}
 
 let sidebarObjectPartOne = {};
 
 let sidebarListPartTwo = ["Settings", "Support", "Privacy"];
-
-for (let i = 1; i <= 6; i++) {
-  document.getElementById("mainPartOne").innerHTML +=
-    "<div id='card" + i + "' class='card'></div>";
-}
-
-/*sidebarListPartOne.forEach((item) => {
-  document.getElementById("sidebarPartOneList").innerHTML +=
-    "<li>" + item + "</li>";
-});*/
-
-sidebarListPartTwo.forEach((item) => {
-  document.getElementById("sidebarPartTwoList").innerHTML +=
-    "<li>" + item + "</li>";
-});
